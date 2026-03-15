@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IronPulse Gym</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+
+<link rel="stylesheet" href="../public/style/admin.css">
+
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+
+<nav class="navbar">
+
+<div class="logo">IronPulse</div>
+
+<ul class="nav-links">
+
+<li><a href="#home">Home</a></li>
+<li><a href="#trainers">Trainers</a></li>
+<li><a href="#pricing">Membership</a></li>
+<li><a href="#bmi">BMI</a></li>
+<li><a href="#gallery">Gallery</a></li>
+<li><a href="#contact">Join</a></li>
+<li><a href="#login">Login</a></li>
+
+</ul>
+
+</nav>
+
+
+  <div class="admin-container">
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <ul>
+        <li onclick="showSection('dashboard')">Dashboard</li>
+        <li onclick="showSection('addMember')">Add Member</li>
+        <li onclick="showSection('manageMembers')">Manage Members</li>
+        <li onclick="showSection('packages')">Fee Packages</li>
+        <li onclick="showSection('billing')">Billing</li>
+        <li onclick="showSection('notification')">Notifications</li>
+        <li onclick="showSection('supplements')">Supplement Store</li>
+        <li onclick="showSection('diet')">Diet Plans</li>
+        <li onclick="showSection('report')">Reports</li>
+        <li class="logout-btn" onclick="logoutAdmin()">Logout</li>
+      </ul>
+    </aside>
+
+    <!-- Main -->
+    <main class="main-content">
+
+      <!-- Dashboard -->
+      <section id="dashboard" class="content active">
+        <h1>Admin Dashboard</h1>
+        <p class="subtitle">Welcome to IronPulse Gym Management System</p>
+
+        <div class="card-grid">
+          <div class="dashboard-card">
+            <h3>Total Members</h3>
+            <p id="totalMembers">0</p>
+          </div>
+          <div class="dashboard-card">
+            <h3>Total Packages</h3>
+            <p id="totalPackages">3</p>
+          </div>
+          <div class="dashboard-card">
+            <h3>Supplements</h3>
+            <p id="totalSupplements">0</p>
+          </div>
+          <div class="dashboard-card">
+            <h3>Notifications</h3>
+            <p id="totalNotifications">0</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Add Member -->
+      <section id="addMember" class="content">
+        <h2>Add New Member</h2>
+        <div class="form-box">
+          <input type="text" id="memberName" placeholder="Enter member name" />
+          <input type="email" id="memberEmail" placeholder="Enter email" />
+          <input type="tel" id="memberPhone" placeholder="Enter phone number" />
+          <input type="number" id="memberAge" placeholder="Enter age" />
+          <input type="password" id="memberPassword" placeholder="Enter password" />
+          <select id="memberGender">
+            <option value="">Select Gender</option>
+            <option>Male</option>
+            <option>Female</option>
+            <option>Other</option>
+          </select>
+          <button onclick="addMember()">Add Member</button>
+        </div>
+      </section>
+
+      <!-- Manage Members -->
+      <section id="manageMembers" class="content">
+        <h2>Manage Members</h2>
+        <div class="table-box">
+          <table>
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Phone</th>
+                <th>Age</th>
+                <th>Gender</th>
+                <th>Package</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody id="memberTable"></tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- Packages -->
+      <section id="packages" class="content">
+        <h2>Assign Fee Package</h2>
+        <div class="form-box">
+          <select id="packageMember">
+            <option value="">Select Member</option>
+        </select>
+          <select id="packageType">
+            <option value="">Select Package</option>
+            <option>Basic</option>
+            <option>Pro</option>
+            <option>Elite</option>
+          </select>
+          <button onclick="assignPackage()">Assign Package</button>
+        </div>
+      </section>
+
+      <!-- Billing -->
+      <section id="billing" class="content">
+  <h2>Create Bill</h2>
+  <div class="form-box">
+    <select id="billMember">
+      <option value="">Select Member</option>
+    </select>
+    <input type="number" id="billAmount" placeholder="Enter amount" />
+    <button type="button" onclick="generateBill()">Generate Bill</button>
+  </div>
+
+  <div class="table-box">
+    <table>
+      <thead>
+        <tr>
+          <th>Member</th>
+          <th>Amount</th>
+          <th>Date</th>
+        </tr>
+      </thead>
+      <tbody id="billTable"></tbody>
+    </table>
+  </div>
+</section>
+
+      <!-- Notification -->
+      <section id="notification" class="content">
+        <h2>Monthly Notification</h2>
+
+         <select id="notificationMember">
+      <option value="">Select Member</option>
+    </select>
+
+        <div class="form-box">
+          <textarea id="notificationText" placeholder="Write notification here..."></textarea>
+          <button onclick="sendNotification()">Send Notification</button>
+        </div>
+
+      </section>
+
+      <!-- Supplements -->
+      <section id="supplements" class="content">
+        <h2>Supplement Store</h2>
+        <div class="form-box">
+          <input type="text" id="supplementName" placeholder="Supplement name" />
+          <input type="number" id="supplementPrice" placeholder="Price" />
+          <button onclick="addSupplement()">Add Supplement</button>
+        </div>
+
+        <div class="table-box">
+          <table>
+            <thead>
+              <tr>
+                <th>Supplement</th>
+                <th>Price</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody id="supplementTable"></tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- Diet -->
+      <section id="diet" class="content">
+  <h2>Diet Plans</h2>
+
+  <div class="diet-form-box">
+    <select id="dietMember">
+      <option value="">Select Member</option>
+    </select>
+
+    <textarea id="dietText" placeholder="Enter diet plan"></textarea>
+
+    <button onclick="saveDietPlan()">Save Diet Plan</button>
+  </div>
+
+</section>
+
+      <!-- Report -->
+      <section id="report" class="content">
+        <h2>Export Report</h2>
+        <div class="form-box">
+          <button onclick="downloadMembersReport()">Download Members Report</button>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <script src="../public/script/admin.js"></script>
+
+
+  <script>
+
+function loadBillMembers() {
+  let members = getData("members") || [];
+  let select = document.getElementById("billMember");
+
+  select.innerHTML = `<option value="">Select Member</option>`;
+
+  members.forEach((member, index) => {
+    select.innerHTML += `<option value="${index}">${member.name}</option>`;
+  });
+}
+
+
+function generateBill() {
+  let memberIndex = document.getElementById("billMember").value;
+  let amount = document.getElementById("billAmount").value;
+
+  if (memberIndex === "" || amount === "") {
+    alert("Please fill all billing details");
+    return;
+  }
+
+  let members = getData("members") || [];
+
+  if (!members[memberIndex]) {
+    alert("Invalid member selected");
+    return;
+  }
+
+  if (!members[memberIndex].bills) {
+    members[memberIndex].bills = [];
+  }
+
+  let bill = {
+    amount: amount,
+    date: new Date().toLocaleDateString()
+  };
+
+  members[memberIndex].bills.push(bill);
+  setData("members", members);
+
+  displayBills();
+  document.getElementById("billAmount").value = "";
+  document.getElementById("billMember").value = "";
+
+  alert("Bill generated successfully");
+}
+
+function displayBills() {
+  let members = getData("members") || [];
+  let table = document.getElementById("billTable");
+  table.innerHTML = "";
+
+  members.forEach(member => {
+    let bills = member.bills || [];
+    bills.forEach(bill => {
+      table.innerHTML += `
+        <tr>
+          <td>${member.name}</td>
+          <td>₹${bill.amount}</td>
+          <td>${bill.date}</td>
+        </tr>
+      `;
+    });
+  });
+}
+
+window.onload = function () {
+  loadBillMembers();
+  displayBills();
+};
+
+
+</script>
+
+
+
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IronPulse Gym</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+
+<link rel="stylesheet" href="../public/style/member.css">
+
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+
+<nav class="navbar">
+
+<div class="logo">IronPulse</div>
+
+<ul class="nav-links">
+
+<li><a href="index.html">Home</a></li>
+<li><a href="#trainers">Trainers</a></li>
+<li><a href="#pricing">Membership</a></li>
+<li><a href="#bmi">BMI</a></li>
+<li><a href="#gallery">Gallery</a></li>
+<li><a href="#contact">Join</a></li>
+<li><a href="#login">Login</a></li>
+
+</ul>
+
+</nav>
+
+
+<div class="dashboard">
+    <!-- Left Sidebar -->
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <p id="welcomeText">Welcome</p>
+      </div>
+
+      <ul class="sidebar-menu">
+        <li class="menu-item active-menu" onclick="showSection('billReceipts', this)">
+          View Bill Receipts
+        </li>
+        <li class="menu-item" onclick="showSection('billNotifications', this)">
+          View Notifications
+        </li>
+        <li class="menu-item logout-btn" onclick="logoutMember()">
+          Logout
+        </li>
+      </ul>
+    </aside>
+
+    <!-- Right Content -->
+    <main class="main-content">
+      <section id="billReceipts" class="content active">
+        <div class="section-header">
+          <h1>Bill Receipts</h1>
+          <p>Your gym bills are shown here.</p>
+        </div>
+        <div id="billReceiptList" class="cards-container"></div>
+      </section>
+
+      <section id="billNotifications" class="content">
+        <div class="section-header">
+          <h1>Notifications</h1>
+          <p>Your admin notifications are shown here.</p>
+        </div>
+        <div id="billNotificationList" class="cards-container"></div>
+      </section>
+    </main>
+  </div>
+
+
+
+  <script src="../public/script/member.js"></script>
+</body>
+</html>

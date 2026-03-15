@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IronPulse Gym</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+
+<link rel="stylesheet" href="../public/style/user.css">
+
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+
+<nav class="navbar">
+
+<div class="logo">IronPulse</div>
+
+<ul class="nav-links">
+
+<li><a href="#home">Home</a></li>
+<li><a href="#trainers">Trainers</a></li>
+<li><a href="#pricing">Membership</a></li>
+<li><a href="#bmi">BMI</a></li>
+<li><a href="#gallery">Gallery</a></li>
+<li><a href="#contact">Join</a></li>
+<li><a href="#login">Login</a></li>
+
+</ul>
+
+</nav>
+
+
+<div class="dashboard">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="sidebar-top">
+        <h2>User Panel</h2>
+        <p id="welcomeText">Welcome</p>
+      </div>
+
+      <ul class="sidebar-menu">
+        <li class="menu-item active-menu" onclick="showSection('viewDetails', this)">View Details</li>
+        <li class="menu-item" onclick="showSection('searchRecords', this)">Search Records</li>
+        <li class="menu-item logout-btn" onclick="logoutUser()">Logout</li>
+      </ul>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <section class="hero-box">
+        <h1>Welcome to IronPulse User Dashboard</h1>
+        <p>View your details and search user records in one place.</p>
+      </section>
+
+      <section id="viewDetails" class="content active">
+        <div class="section-header">
+          <h1>View Details</h1>
+          <p>Your logged in information is shown below.</p>
+        </div>
+
+        <div class="card" id="userDetailsBox">
+          <div class="empty-card">
+            <h3>No User Logged In</h3>
+            <p>Please login first to view your details.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="searchRecords" class="content">
+        <div class="section-header">
+          <h1>Search Records</h1>
+          <p>Search users by name or email.</p>
+        </div>
+
+        <div class="card">
+          <div class="search-box">
+            <input type="text" id="searchInput" placeholder="Enter name or email">
+            <button onclick="searchRecords()">Search</button>
+          </div>
+
+          <div id="searchResult">
+            <div class="empty-card">
+              <h3>No Search Yet</h3>
+              <p>Search result will appear here.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+
+   <script src="../public/script/user.js"></script>
+</body>
+</html>

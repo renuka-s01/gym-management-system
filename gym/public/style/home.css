@@ -1,0 +1,388 @@
+html{
+scroll-behavior:smooth;
+}
+
+body{
+margin:0;
+ font-family:'Poppins', sans-serif;
+  background:linear-gradient(135deg,#120909,#2a0f0f,#3b1111);
+color:white;
+}
+
+.navbar{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:20px;
+background:rgb(51, 22, 22, 0.95);
+position:sticky;
+top:0;
+ z-index:1000;
+}
+
+.logo{
+font-size:24px;
+font-weight:bold;
+color:#ff4d00;
+}
+
+.nav-links{
+display:flex;
+list-style:none;
+    align-items:center;
+    padding:0;
+}
+
+.nav-links li{
+margin:0 15px;
+}
+
+.nav-links a{
+text-decoration:none;
+color:white;
+}
+
+.nav-links a:hover{
+  color:#ff6600;
+  transition:0.3s;
+}
+
+.hero{
+height:90vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+background:linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.6)),
+ url(../images/bg.jpg) center/cover  no-repeat;
+}
+
+.hero h1{
+color: #ff4d00;
+font-size:70px;
+ text-shadow:0 0 20px rgba(255,102,0,0.5);
+}
+
+.hero p{
+    color: white;
+}
+
+.hero-buttons{
+  display:flex;
+  gap:15px;
+  justify-content:center;
+  flex-wrap:wrap;
+  margin-top:20px;
+}
+
+.secondary-btn{
+  background:transparent;
+  border:1px solid #ff6600;
+}
+
+.secondary-btn:hover{
+  background:#ff6600;
+}
+
+.section{
+width: 100%;
+max-width: 1400px;
+margin: 0 auto;
+box-sizing: border-box;    
+padding:80px 20%;
+text-align:center;
+position: relative;
+z-index: 1;
+align-items: center;
+}
+
+.trainer-container{
+display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+gap: 30px;
+width: 100%;
+flex-wrap: wrap;
+max-width: 1200px;
+margin: 0 auto;
+}
+
+#trainers{
+width: 100%;
+padding-top: 100px;
+text-align: center;
+}
+
+#trainers h1{
+  margin-bottom: 50px;
+  text-align: center;
+}
+
+.trainer-card{
+  width: 300px;
+  background: #3a2222;
+  padding: 20px;
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 0 0 20px rgba(255, 102, 0, 0.25);
+  position: relative;
+  z-index: 1;
+  box-sizing: border-box;
+}
+
+.trainer-card:hover{
+transform:scale(1.05);
+}
+
+.trainer-card img{
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 15px;
+}
+
+.pricing{
+display:flex;
+gap:30px;
+justify-content:center;
+}
+
+.price-card{
+background:#1a1a1a;
+padding:30px;
+border-radius:10px;
+align-items: center;
+text-align: center;
+}
+
+.price-card h3{
+    color: #ff4500;
+}
+
+
+.trainer-card,
+.price-card,
+.login-box{
+  background:rgba(255,255,255,0.08);
+  border:1px solid rgba(255,255,255,0.15);
+  backdrop-filter:blur(10px);
+  box-shadow:0 8px 25px rgba(0,0,0,0.3);
+  border-radius:20px;
+  transition:all 0.3s ease;
+}
+
+.trainer-card:hover,
+.price-card:hover,
+.login-box:hover{
+  transform:translateY(-8px);
+  box-shadow:0 12px 35px rgba(255,102,0,0.25);
+}
+
+.trainer-container,
+  .pricing{
+    align-items:center;
+  }
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+    padding: 40px;
+}
+
+.gallery img{
+    width: 100%;
+    height: 250px;          /* same height for all images */
+    object-fit: cover;      /* crop image to fit box */
+    border-radius: 15px;
+    transition: transform 0.3s ease;
+}
+
+/* Hover effect */
+.gallery img:hover{
+    transform: scale(1.05);
+}
+
+form{
+display:flex;
+flex-direction:column;
+max-width:400px;
+margin:auto;
+}
+
+form input, form select{
+margin:10px 0;
+padding:10px;
+border:none;
+border-radius:5px;
+}
+
+form button{
+background:#ff4d00;
+border:none;
+padding:12px;
+color:white;
+}
+
+table{
+width:100%;
+margin:auto;
+border-collapse:collapse;
+}
+
+td,th{
+border:1px solid #444;
+padding:10px;
+}
+
+
+.login-section{
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+background:#240202;
+}
+
+.login-box{
+background: #3a2222;
+padding:40px;
+border-radius:10px;
+width:320px;
+text-align:center;
+box-shadow:0 0 10px rgba(0,0,0,0.5);
+}
+
+.login-box h2{
+color:white;
+margin-bottom:20px;
+}
+
+.login-box input,
+.login-box select{
+width:100%;
+padding:10px;
+margin:10px 0;
+border:none;
+border-radius:5px;
+}
+
+.login-box button{
+width:100%;
+padding:10px;
+background:#ff6600;
+color:white;
+border:none;
+border-radius:5px;
+cursor:pointer;
+}
+
+.login-box button:hover{
+background:#ff4500;
+}
+
+#message{
+color:red;
+margin-top:10px;
+}
+
+.section-divider{
+width:80%;
+margin:60px auto;
+border:1px solid white;
+opacity:0.5;
+}
+
+
+.join-btn{
+display:inline-block;
+padding:12px 25px;
+background:#ff6600;
+color:white;
+text-decoration:none;
+border-radius:5px;
+font-size:16px;
+margin-top:15px;
+}
+
+.join-btn:hover{
+background:#ff4500;
+}
+
+.fade-up{
+  opacity:0;
+  transform:translateY(30px);
+  animation:fadeUp 1s ease forwards;
+}
+
+@keyframes fadeUp{
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+}
+
+
+.price-card ul{
+  list-style:none;
+  padding:0;
+  margin-top:15px;
+}
+
+.price-card ul li{
+  margin:8px 0;
+}
+
+input:focus, select:focus, textarea:focus{
+  outline:none;
+  box-shadow:0 0 10px rgba(255,102,0,0.45);
+}
+
+#successMsg{
+  margin-top:12px;
+  font-weight:600;
+}
+
+form, .login-box{
+  animation:fadeUp 0.8s ease;
+}
+
+@media (max-width: 768px){
+  .navbar{
+    flex-direction:column;
+    gap:15px;
+  }
+
+  .nav-links{
+    flex-wrap:wrap;
+    justify-content:center;
+  }
+
+  .login-box h2{
+  margin-bottom:20px;
+  color:#ff6600;
+}
+
+  .hero h1{
+    font-size:40px;
+  }
+
+  .section{
+    padding:60px 8%;
+  }
+
+  .pricing{
+    flex-direction:column;
+    align-items:center;
+  }
+
+  .trainer-container{
+    flex-direction:column;
+  }
+
+  .login-box{
+    width:90%;
+  }
+}
