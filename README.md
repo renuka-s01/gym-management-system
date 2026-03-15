@@ -32,6 +32,8 @@ HTML5
 CSS3
 JavaScript (ES6)
 
+project link:
+https://github.com/renuka-s01/gym-management-system
 
 Author
 Renuka Sawant
